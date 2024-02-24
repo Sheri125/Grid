@@ -1,0 +1,119 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(6 ,200px);
+    grid-template-rows: 50px 100px 100px 100px 100px 100px;
+    line-height: 50px;
+}
+
+.box{
+    color: white;
+    align-items: center;
+    text-align: center;
+}
+.a{
+    color: black;
+}
+
+.box1{
+    background-color: black;
+    grid-column: 1;
+}
+.box2{
+    grid-column: 2 / span 6;
+    background-color: red;
+}
+.box3{
+    grid-column: 1 / span 7;
+    grid-row: 2 / span 2;
+    background-color: rgb(38, 134, 172);
+} 
+.box4{
+    grid-column: 1 / span 4;
+    grid-row: 4 / span 2;
+    background-color: rgb(4, 4, 124);
+
+}
+.box5{
+    grid-column: 7;
+    grid-row: 4 / span 1;
+    background-color: lightblue;
+
+}
+.box6{
+    grid-row: 5 / span 1;
+    grid-column: 7;
+    background-color: rgb(65, 161, 129);
+ 
+
+}
+.box7{
+    grid-column: 1 /span 7;
+    grid-row: 6 /span 2;
+    background-color: rgb(255, 242, 65);
+
+}
+
+@media only  screen and (max-width: 770px){
+    
+    .container{
+        display: grid;
+        grid-template-columns:  [one] 200px [two] 200px [three] 200px [four] 200px;
+        grid-template-rows: [one-r] 50px [two-r] 100px [three-r] 100px [four-r] 100px [five-r] 100px [six-r] 100px [seven-r] 100px;
+        line-height: 70px;
+    }
+
+    .box1{
+        grid-column: one /five;
+    }
+    .box2 {
+        grid-area: four-r / one / span 5 / span 1;
+    }
+    .box3{
+        grid-area: two-r / one / span 2 / span 5;
+    }
+    .box4 {
+        grid-area: four-r / two / span 2 / span 5;
+    }
+    .box7 {
+        grid-area: five-r / two / span 2 / span 5;
+    }
+    .box6 {
+        grid-area: seven-r / two / span 1 / span 2;
+    }
+    .box5 {
+        grid-area: seven-r / four;
+    }
+}
+@media only  screen and (max-width: 470px){
+    .container {
+        grid-template-columns: repeat(2, 200px);
+        line-height: 60px;
+    }
+    .box1,
+    .box2,
+    .box3,
+    .box4,
+    .box7,
+    .box6 {
+        grid-column: 1 / span 2;
+    }
+
+    .box2,
+    .box3,
+    .box4,
+    .box6 {
+        grid-row: span 1;
+    }
+    .box5 {
+        grid-row: 7;
+        grid-column: 1 / span 2;
+    }
+    .box7 {
+        grid-row: 5;
+    }
+}
